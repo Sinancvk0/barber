@@ -10,19 +10,19 @@ import { Observable } from 'rxjs';
 })
 export class CategoryService {
 
-  constructor(private httpClient:HttpClient) { }
-  getAll():Observable<DataResponse<Category[]>>{
+  constructor(private httpClient: HttpClient) { }
+  getAll(): Observable<DataResponse<Category[]>> {
 
     return this.httpClient.get<DataResponse<Category[]>>(environment.getApiUrl("/categories/get-all"))
-   }
-   create(category:Category):Observable<Response>{
-    return this.httpClient.post<Response>(environment.getApiUrl("/categories/create"),category)
+  }
+  create(category: Category): Observable<Response> {
+    return this.httpClient.post<Response>(environment.getApiUrl("/categories/create"), category)
 
-   }
-   update(category:Category):Observable<Response>{
-    return this.httpClient.post<Response>(environment.getApiUrl("/users/update"),category);
-}
-deleteById(categoryId:number):Observable<Response>{
-    return this.httpClient.delete<Response>(environment.getApiUrl("/categories/delete-by-id/"+categoryId));
-}
+  }
+  update(category: Category): Observable<Response> {
+    return this.httpClient.post<Response>(environment.getApiUrl("/users/update"), category);
+  }
+  deleteById(categoryId: number): Observable<Response> {
+    return this.httpClient.delete<Response>(environment.getApiUrl("/categories/delete-by-id/" + categoryId));
+  }
 }
