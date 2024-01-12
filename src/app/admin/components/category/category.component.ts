@@ -7,13 +7,13 @@ import { CategoryAddComponent } from './category-add/category-add/category-add.c
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [CommonModule,CategoryAddComponent],
+  imports: [CommonModule, CategoryAddComponent],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss'
 })
 export class CategoryComponent implements OnInit {
   categories: Category[] = []
-  @ViewChild(CategoryAddComponent,{static:true}) categoryAddComponent !: CategoryAddComponent; 
+  @ViewChild(CategoryAddComponent, { static: true }) categoryAddComponent !: CategoryAddComponent;
   constructor(private categoryService: CategoryService) { }
   ngOnInit(): void {
     this.getList();
@@ -24,8 +24,17 @@ export class CategoryComponent implements OnInit {
       this.categories = result.data;
     });
   }
-  showAddModal(){
+  showAddModal() {
     this.categoryAddComponent.createCreateForm();
   }
+  // showEditModal(user:User|null){
+  //   if(user==null) return;
+  //   this.updateUserComponent.createUpdateForm(user);
+  // }
+  deleteUserById(id: number) {
+    this.categoryService.deleteById(id).subscribe(result => {
+      this.getList();
+    })
 
+  }
 }

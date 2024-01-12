@@ -36,14 +36,13 @@
                                         <td>{{category.id}}</td>
                                         <td>{{category.name}}</td>
                                         
-                                        <!-- <td>
-                                            <button class="btn btn-icon"
+                                        <td>
+                                            <!-- <button class="btn btn-icon"
                                             data-bs-toggle="modal" (click)="showEditModal(user)" data-bs-target=".edit-modal"
-                                            ><span>Edit</span></button>
-                                            <button class="btn btn-icon" (click)="deleteUserById(user.id)"><span>Delete</span></button>
-                                            <button class="btn btn-icon" [routerLink]="'/admin/users/set-credentials/'+user.id"><span>Set Credentials</span></button>
-                                            <button class="btn btn-icon" [routerLink]="'/admin/users/list-working-ranges/'+user.id"><span>Set Working Ranges</span></button>
-                                        </td> -->
+                                            ><span>Edit</span></button> -->
+                                            <button class="btn btn-icon" (click)="deleteUserById(category.id)"><span>Delete</span></button>
+                                          
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -19,4 +19,10 @@ export class CategoryService {
     return this.httpClient.post<Response>(environment.getApiUrl("/categories/create"),category)
 
    }
+   update(category:Category):Observable<Response>{
+    return this.httpClient.post<Response>(environment.getApiUrl("/users/update"),category);
+}
+deleteById(categoryId:number):Observable<Response>{
+    return this.httpClient.delete<Response>(environment.getApiUrl("/categories/delete-by-id/"+categoryId));
+}
 }
