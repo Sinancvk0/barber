@@ -15,6 +15,9 @@ import { ProductComponent } from './admin/components/product/product.component';
 import { ServiceComponent } from './admin/components/service/service.component';
 import { PhotoService } from './services/photo.service';
 
+import { AppointmentComponent } from './admin/components/appointment/appointment.component';
+import { PhotoComponent } from './admin/components/photo/photo.component';
+
 export const routes: Routes = [
     {path:'',component:HomeComponent},
     {path:'admin/login',component:LoginComponent,canActivate:[isLogoutGuard] },
@@ -30,7 +33,8 @@ export const routes: Routes = [
         {path:'categories',component:CategoryComponent},
         {path:'products',component:ProductComponent},
         {path:'services',component:ServiceComponent},
-        {path:'gallery',component:PhotoService},
+        {path:'gallery',component:PhotoComponent},
+        {path:'appointments',component:AppointmentComponent}
 
     ]}
 ];
