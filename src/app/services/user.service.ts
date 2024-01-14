@@ -8,6 +8,7 @@ import { environment } from "../environments/environment";
 import { UserForUpdateDto } from "../dtos/user-for-update-dto";
 import { UserForCreateDto } from "../dtos/user-for-create-dto";
 import { UserWorkingRange } from "../models/user-working-range";
+import { Leave } from "../models/leave";
 @Injectable({providedIn:'root'})
 export class UserService{
     
@@ -50,4 +51,8 @@ export class UserService{
     setWorkingRange(userWorkingRange:UserWorkingRange):Observable<Response>{
         return this.httpClient.post<Response>(environment.getApiUrl('/users/set-working-range'),userWorkingRange)
     }
+    // getByIdLeaves(userId:number):Observable<DataResponse<Leave>>{
+    //     return this.httpClient.get<DataResponse<Leave>>(environment.getApiUrl(/le))
+
+    // }
 }
