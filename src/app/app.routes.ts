@@ -12,6 +12,7 @@ import { UserSetCredentialComponent } from './admin/components/user/user-set-cre
 import { UserListWorkingRangeComponent } from './admin/components/user/user-list-working-range/user-list-working-range.component';
 import { CategoryComponent } from './admin/components/category/category.component';
 import { ProductComponent } from './admin/components/product/product.component';
+import { ServiceComponent } from './admin/components/service/service.component';
 
 export const routes: Routes = [
     {path:'',component:HomeComponent},
@@ -26,7 +27,8 @@ export const routes: Routes = [
         {path:'users/set-credentials/:userId',component:UserSetCredentialComponent},
         {path:'users/list-working-ranges/:userId',component:UserListWorkingRangeComponent},
         {path:'categories',component:CategoryComponent},
-        {path:'products',component:ProductComponent}
+        {path:'products',component:ProductComponent},
+        {path:'services',component:ServiceComponent}
 
     ]}
 ];
