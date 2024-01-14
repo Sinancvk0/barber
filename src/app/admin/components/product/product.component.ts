@@ -30,4 +30,13 @@ export class ProductComponent {
   showAddModal(){
     this.addProductComponent.createCreateForm();
   }
+  showEditModal(product:Product|null){
+    if(product==null) return;
+    this.updateProductComponent.createUpdateForm(product);
+  }
+  deleteProductById(id:number){
+    this.productService.deleteById(id).subscribe(result=>{
+      this.getList();
+    })
+  }
 }
