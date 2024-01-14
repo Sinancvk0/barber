@@ -1,0 +1,58 @@
+<!-- Create Modal example -->
+<div class="modal fade edit-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="card shadow-none border-0 p-3 pb-0">
+                <div class="card-title">
+                    <h4>Update Appointment</h4>
+                </div>
+                <div class="card-body" *ngIf="updateForm">
+                    <form  [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label class="form-label" for="name-input">Full Name</label>
+                            <input type="text" class="form-control" formControlName="fullName" id="name-input">
+                        </div>
+  
+                        <div class="mb-3">
+                          <label class="form-label" for="name-input">Phone Number</label>
+                          <input type="number" class="form-control" formControlName="phoneNumber" id="name-input">
+                         </div>
+
+                        <div class="mb-3">
+                          <label class="form-label" for="duration-input">E-Mail</label>
+                          <input type="email" class="form-control" formControlName="email" id="duration-input">
+                         </div>
+
+                         <div class="mb-3">
+                            <label class="form-label" for="user-select">Personnel</label>
+                            <select id="user-select" class="form-control" formControlName="userId">
+                                <option *ngFor="let user of users" [value]="user.id">{{user.firstName }}</option>
+                            </select>
+                         </div>
+                        <div class="mb-3">
+                        <label class="form-label" for="start-date-input">Start Date</label>
+                        <input type="datetime-local" class="form-control" formControlName="startDate" id="start-date-input">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="end-date-input">End Date</label>
+                            <input type="datetime-local" class="form-control" formControlName="endDate" id="end-date-input">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="completed-input">Completed</label>
+                            <div class="form-check">
+                                <input type="checkbox"  class="form-check-input" formControlName="completed" id="completed-input">
+                                <label class="form-check-label" for="completed-input">Yes</label>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <button class="btn btn-warning d-block ms-auto">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+  
+        </div>
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
